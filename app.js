@@ -51,11 +51,35 @@ function determineSection(items) {
 function displayData(sectionId, items) {
     let contentHtml = '<div class="list-group">';
     items.forEach(item => {
-        contentHtml += `<a href="#" class="list-group-item list-group-item-action">ID: ${item.id}, Name: ${item.name}</a>`;
+        if(item && item.name) { // Asegurarse de que el ítem existe y tiene nombre
+            const itemDetails = JSON.stringify(item, null, 4) // Mejorar la legibilidad
+                                    .replace(/\n/g, "<br>")
+                                    .replace(/ /g, "&nbsp;");
+            contentHtml += `
+                <div class="list-group-item" data-item-id="${item.id}">
+                    <a href="#" class="toggle-details">ID: ${item.id}, Name: ${item.name}</a>
+                    <div id="details-${sectionId}-${item.id}" class="item-details collapse">
+                        <pre>${itemDetails}</pre>
+                    </div>
+                </div>
+            `;
+        }
     });
     contentHtml += '</div>';
     document.getElementById(sectionId).innerHTML = contentHtml;
+
+    // Añadir evento de clic para expandir/contraer los detalles del ítem
+    document.querySelectorAll(`#${sectionId} .list-group-item .toggle-details`).forEach(itemElement => {
+        itemElement.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+            const parent = this.parentElement;
+            const details = parent.querySelector('.item-details');
+            details.classList.toggle('show');
+        });
+    });
 }
+
+
 
 document.querySelectorAll('.file-upload-wrapper').forEach(wrapper => {
     const input = wrapper.querySelector('input[type="file"]');

@@ -87,3 +87,54 @@ body {
     max-width: 300px;
     display: inline-block;
 }
+
+.list-group-item {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #ced4da;
+}
+
+.list-group-item .toggle-details {
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+}
+
+.item-details {
+    display: none;
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+
+.item-details.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para el contenedor <pre> dentro de .item-details para mantener el formato JSON */
+.item-details pre {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    white-space: pre-wrap; /* Asegura que el formato JSON se mantiene */
+    word-wrap: break-word;
+}
