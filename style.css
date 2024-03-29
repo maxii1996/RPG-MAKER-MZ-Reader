@@ -1,0 +1,89 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #f8f9fa;
+}
+
+.upload-area {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #007bff;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 25px;
+    color: #fff;
+    margin: 0 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.file-upload-wrapper .icon {
+    margin-right: 10px;
+}
+
+.file-upload-wrapper:hover {
+    background: #0056b3;
+}
+
+.upload-folder {
+    background: #28a745;
+}
+
+.upload-folder:hover {
+    background: #218838;
+}
+
+.file-upload-field {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.data-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    margin-top: 20px;
+}
+
+
+.file-upload-wrapper i {
+    margin-right: 8px;
+}
+
+.file-upload-wrapper span {
+    vertical-align: middle;
+}
+
+.file-upload-wrapper i {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+.folder-path {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    display: inline-block;
+}

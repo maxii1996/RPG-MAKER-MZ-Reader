@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Maker MZ Data Viewer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid mt-4">
+        <div class="upload-area d-flex justify-content-start align-items-center mb-4">
+            <div class="d-flex align-items-center mr-auto">
+                <label class="file-upload-wrapper upload-folder">
+                    <i class="fa-solid fa-folder-open"></i><span> Upload Data Folder</span>
+                    <input type="file" webkitdirectory directory multiple name="file-upload-field" id="uploadFolder"
+                        class="file-upload-field">
+                </label>
+                <span id="folderPath" class="folder-path"></span>
+            </div>
+            <label class="file-upload-wrapper">
+                <i class="fa-solid fa-flask"></i><span> Upload Items</span>
+                <input type="file" name="file-upload-field" id="uploadObjects" accept=".json" class="file-upload-field">
+            </label>
+            <label class="file-upload-wrapper">
+                <i class="fa-solid fa-wand-sparkles"></i><span> Upload Weapons</span>
+                <input type="file" name="file-upload-field" id="uploadWeapons" accept=".json" class="file-upload-field">
+            </label>
+            <label class="file-upload-wrapper">
+                <i class="fa-solid fa-shield"></i><span> Upload Armors</span>
+                <input type="file" name="file-upload-field" id="uploadArmors" accept=".json" class="file-upload-field">
+            </label>
+        </div>
+        <div class="row">
+            <div id="itemsSection" class="data-section col">
+                <h4>Items</h4>
+            </div>
+            <div id="weaponsSection" class="data-section col">
+                <h4>Weapons</h4>
+            </div>
+            <div id="armorsSection" class="data-section col">
+                <h4>Armors</h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
